@@ -4,6 +4,34 @@
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/backlight.h>
 
+/* Shortcuts */
+#define _SCREEN_SHOT LC(LG(LS(N4)))
+#define _ZOOM_IN LG(KP_PLUS)
+#define _ZOOM_OUT LG(KP_MINUS)
+
+
+/* Intellij */
+#define _QUICK_FIX LA(ENTER)
+#define _ACTION LG(LS(A)) 
+#define _IMPORT LA(LC(O)) // optimize import
+#define _FORMAT LA(LG(L)) // format file
+#define _RENAME LS(F6)
+#define _REFACTOR LC(T)
+
+/* navigation */
+#define _MISSION_CONTROL LC(UP)
+#define _ALFRED LA(SPACE)
+#define _TOGGLE_DOCK LG((LA(D)))
+#define _DESKTOP LC(DOWN)
+#define _LEFT_SPACE LC(LEFT)
+#define _RIGHT_SPACE LC(RIGHT)
+#define _LEFT_TAB LS(LG(LEFT_BRACKET))
+#define _RIGHT_TAB LS(LG(RIGHT_BRACKET))
+#define _BROWSER_BACK LG(LEFT_BRACKET)
+#define _BROWSER_FORWARD LG(RIGHT_BRACKET)
+#define _LEFT_WORD LA(LEFT)
+#define _RIGHT_WORD LA(RIGHT)
+
 / {
     behaviors {
       #include "macros.dtsi"
@@ -25,19 +53,19 @@
     default_layer {
       bindings = <
         &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &tog 1                                                                       &mo 3 &kp N6 &kp N7 &kp N8    &kp N9   &kp N0   &kp MINUS
-        &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &kp KP_NUMBER_1                                                      &kp KP_NUMBER_3 &kp Y  &kp U  &kp I     &kp O    &kp P    &kp BSLH
-        &kp ESC   &kp A     &kp S    &kp D    &kp F      &kp G  &kp KP_NUMBER_2    &kp LCTRL &kp LALT                    &kp LGUI  &kp RCTRL                   &kp KP_NUMBER_4 &kp H  &kp J  &kp K     &kp L    &kp SEMI &kp SQT
-        &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B        &none     &none     &kp HOME &none &none &kp PG_UP &none     &none            &kp N  &kp M  &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
-        &mo 2     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT               &kp BKSP  &kp DEL   &kp END              &kp PG_DN &kp ENTER &kp SPACE               &kp UP &kp DOWN  &kp LBKT &kp RBKT &mo 2
+        &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &kp _IMPORT                                                                 &kp _RENAME &kp Y  &kp U  &kp I     &kp O    &kp P    &kp BSLH
+        &kp LCTL  &kp A     &kp S    &kp D    &kp F      &kp G  &kp _FORMAT     &kp LGUI &kp LALT                    &kp ESC  &kp RCTRL    &kp _SCREEN_SHOT &kp H  &kp J  &kp K     &kp L    &kp SEMI &kp SQT
+        &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B        &none     &none     &kp _ZOOM_IN &none &none &kp PG_UP &none     &none            &kp N  &kp M  &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
+        &mo 2     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT               &kp SPC   &kp BKSP  &kp _ZOOM_OUT              &kp PG_DN &kp DEL &kp ENTER               &kp UP &kp DOWN  &kp LBKT &kp RBKT &mo 2
         >;
     };
     keypad {
       bindings = <
         &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &trans                                                                       &mo 3 &kp N6 &kp KP_NUM &kp KP_EQUAL &kp KP_DIVIDE &kp KP_MULTIPLY &kp MINUS
         &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                                        &none &kp Y  &kp KP_N7  &kp KP_N8    &kp KP_N9     &kp KP_MINUS    &kp BSLH
-        &kp ESC   &kp A     &kp S    &kp D    &kp F      &kp G  &none          &kp LCTRL &kp LALT             &kp LGUI  &kp RCTRL            &none &kp H  &kp KP_N4  &kp KP_N5    &kp KP_N6     &kp KP_PLUS     &kp SQT
-        &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B        &none    &none     &kp HOME &none &none &kp PG_UP &none     &none            &kp N  &kp KP_N1  &kp KP_N2    &kp KP_N3     &kp KP_ENTER    &kp RSHFT
-        &mo 2     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT               &kp BKSP &kp DEL   &kp END              &kp PG_DN &kp ENTER &kp KP_N0               &kp UP     &kp DOWN     &kp KP_DOT    &kp RBKT         &mo 2
+        &kp LCTL   &kp A     &kp S    &kp D    &kp F      &kp G  &none          &trans  &trans             &kp LGUI  &kp RCTRL            &none &kp H  &kp KP_N4  &kp KP_N5    &kp KP_N6     &kp KP_PLUS     &kp SQT
+        &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B        &none    &none     &trans &none &none &trans &none     &none            &kp N  &kp KP_N1  &kp KP_N2    &kp KP_N3     &kp KP_ENTER    &kp RSHFT
+        &mo 2     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT               &trans &trans   &trans              &trans &kp ENTER &kp KP_N0               &kp UP     &kp DOWN     &kp KP_DOT    &kp RBKT         &mo 2
       >;
     };
     fn {
