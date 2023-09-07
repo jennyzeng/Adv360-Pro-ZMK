@@ -63,7 +63,7 @@
     &kp F1            &kp F2         &kp F3                    &kp F4                     &kp F5            &kp F6            &tog 1                                                   &mo 3        &kp F7         &kp F8  &kp F9    &kp F10   &kp F11  &kp F12
  &kt GRAVE            &kp N1         &kp N2                    &kp N3                     &kp N4            &kp N5             &none                                                   &none        &kp N6         &kp N7  &kp N8     &kp N9    &kp N0   &trans
     &trans      &kp LC(LEFT)  &kp LC(RIGHT)  &kp LS(LG(LEFT_BRACKET))  &kp LS(LG(RIGHT_BRACKET))   &kp LG(KP_PLUS)             &none  &trans  &trans                  &trans  &trans   &none      &kp LEFT       &kp DOWN  &kp UP  &kp RIGHT  &kp HOME   &trans
-    &trans  &kp LC(UP_ARROW)  &kp LG(LS(A))      &kp LG(LEFT_BRACKET)      &kp LG(RIGHT_BRACKET)  &kp LG(KP_MINUS)                             &none                  &trans                  &kp LA(LEFT)  &kp LA(RIGHT)  &trans     &trans    &trans   &trans
+    &trans  &kp LC(UP_ARROW)  &kp LG(LS(A))      &kp LG(LEFT_BRACKET)      &kp LG(RIGHT_BRACKET)  &kp LG(KP_MINUS)                            &trans                  &trans                  &kp LA(LEFT)  &kp LA(RIGHT)  &trans     &trans    &trans   &trans
     &trans            &trans         &trans                    &trans                     &trans                              &trans  &trans  &trans                  &trans  &trans  &trans                       &trans  &trans     &trans    &trans   &trans
             >;
         };
